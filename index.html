@@ -3,14 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAHARISON Leong</title>
+    <title>RAHARISONLeong</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --light-bg: #f5f6fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--secondary-color);
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1920x1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .about {
+            background-color: var(--light-bg);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .skills ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .projects-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .github-link, .demo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--white);
+            transition: background-color 0.3s ease;
+        }
+
+        .github-link {
+            background-color: #333;
+        }
+
+        .demo-link {
+            background-color: var(--secondary-color);
+        }
+
+        .github-link:hover {
+            background-color: #24292e;
+        }
+
+        .demo-link:hover {
+            background-color: #2980b9;
+        }
+
+        input, textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">PORTOFOLIO</div>
+            <div class="logo">Mon Portfolio</div>
             <ul class="nav-links">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#apropos">À propos</a></li>
@@ -23,7 +252,7 @@
         <section id="accueil" class="hero">
             <div class="hero-content">
                 <h1>RAHARISON Leong Foc Sing Andhy</h1>
-                <p>Étudiant en deuxième année de BUT Informatique</p>
+                <p>Étudiant en deuxième année de BUT Informatique </p>
             </div>
         </section>
 
@@ -32,7 +261,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>Je suis un étudiant en deuxième année de BUT Informatique, spécialisé dans le développement d'applications et de logiciels.</p>
-                    <p>J'ai acquis de nombreuses compétences en développement backend et frontend ainsi que dans divers autres domaines.</p>
+                    <p>Au cours de ma formation et à travers divers projets académiques, j'ai acquis de nombreuses compétences en développement backend et frontend. J'ai également exploré plusieurs autres domaines, tels que le réseau, la cryptographie et les bases de l'intelligence artificielle.</p>
                 </div>
                 <div class="skills">
                     <h3>Compétences</h3>
@@ -43,8 +272,14 @@
                         <li>HTML/CSS</li>
                         <li>JavaScript</li>
                         <li>PHP</li>
+                        <li>Android Studio</li>
+                        <li>JavaFX</li>
                         <li>SQL, MySQL</li>
-                        <li>Linux, Windows</li>
+                        <li>GIT</li>
+                        <li>Virtualisation</li>
+                        <li>Linux</li>
+                        <li>Windows</li>
+                        <li>SpringBoot</li>
                     </ul>
                 </div>
             </div>
@@ -55,10 +290,44 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <h3>Jeu de paires</h3>
-                    <p>Un jeu développé en C avec la bibliothèque ncurses.</p>
-                    <a href="https://github.com/andhy-leong/JeuDePaires" target="_blank" class="github-link">
-                        <i class="fab fa-github"></i> Voir sur GitHub
-                    </a>
+                    <p>Lors du premier semestre, nous devions créer un jeu de paires, que nous avons développé en C en utilisant la bibliothèque ncurses.</p>
+                    <br>
+                    <div class="project-links">
+                        <a href="https://github.com/andhy-leong/JeuDePaires" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i> Jeu de paires
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Téléchargement de site web</h3>
+                    <p>Lors du second semestre, nous avons dû développer un système de téléchargement de sites web (HTML, CSS, JS) à partir de leurs URL. Ce projet a été réalisé en JAVA.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/andhy-leong/WebPageSaver" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>WebPageSaver
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Compression de fichier</h3>
+                    <p>En parallèle du projet d'enregistrement de sites web, celui-ci permet également de compresser les fichiers téléchargés.</p>
+                    <br>
+                    <div class="project-links">
+                        <a href="https://github.com/andhy-leong/WebCompressLib" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>WebCompressLib
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Site de e-commerce</h3>
+                    <p>Pour le semestre 3, nous avons réalisé un site e-commerce en suivant l'architecture MVVM.</p>
+                    <br>
+                    <div class="project-links">
+                        <a href="https://github.com/andhy-leong/e-commerce" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>Site de e-commerce
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -68,13 +337,83 @@
         <div class="footer-content">
             <p>RAHARISON Leong Foc Sing Andhy</p>
             <div class="social-links">
-                <a href="https://github.com/andhy-leong" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/leong-foc-sing-andhy-raharison" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:andhyleong29@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/andhy-leong?tab=repositories" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/leong-foc-sing-andhy-raharison-2404322b7/" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:andhyleong29@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Smooth scrolling pour les liens d'ancrage
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation de la barre de navigation lors du défilement
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('scroll-up');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+                // Scroll Down
+                header.classList.remove('scroll-up');
+                header.classList.add('scroll-down');
+            } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+                // Scroll Up
+                header.classList.remove('scroll-down');
+                header.classList.add('scroll-up');
+            }
+            lastScroll = currentScroll;
+        });
+
+        const contactForm = document.getElementById('contact-form');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            console.log('Données du formulaire:', data);
+
+            this.reset();
+            alert('Message envoyé avec succès!');
+        });
+
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
