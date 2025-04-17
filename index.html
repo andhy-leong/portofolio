@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAHARISONLeong</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
+       <style>
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
+            --accent-color: #e74c3c;
             --text-color: #333;
             --light-bg: #f5f6fa;
             --white: #ffffff;
+            --border-radius: 8px;
+            --transition-speed: 0.3s;
         }
 
         * {
@@ -24,15 +27,18 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
+            background-color: var(--light-bg);
         }
 
         header {
             background-color: var(--primary-color);
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all var(--transition-speed) ease;
         }
 
         nav {
@@ -46,7 +52,7 @@
 
         .logo {
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
         }
 
@@ -55,11 +61,22 @@
             list-style: none;
         }
 
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            color: var(--white);
+            cursor: pointer;
+        }
         .nav-links li a {
             color: var(--white);
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            transition: color 0.3s ease;
+            padding: 0.8rem 1.2rem;
+            font-size: 1.1rem;
+            transition: color var(--transition-speed) ease;
         }
 
         .nav-links li a:hover {
@@ -67,7 +84,7 @@
         }
 
         section {
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
         }
 
         .hero {
@@ -85,10 +102,13 @@
         .hero-content h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
 
         .about {
             background-color: var(--light-bg);
+            padding: 3rem 0;
+            margin-left: 20px;
         }
 
         .about-content {
@@ -99,11 +119,19 @@
             gap: 2rem;
         }
 
-        .skills ul {
+        .about-content p {
+            color: var(--text-color);
+            font-size: 1.1rem;
+        }
+
+        .skills ul,
+        .qualites ul,
+        .langues ul,
+        .interets ul {
             list-style: none;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .projects-grid {
@@ -117,14 +145,15 @@
 
         .project-card {
             background: var(--white);
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             padding: 1.5rem;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
         .project-card h3 {
@@ -146,11 +175,11 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
+            padding: 0.8rem 1.4rem;
+            border-radius: var(--border-radius);
             text-decoration: none;
             color: var(--white);
-            transition: background-color 0.3s ease;
+            transition: background-color var(--transition-speed) ease;
         }
 
         .github-link {
@@ -169,31 +198,11 @@
             background-color: #2980b9;
         }
 
-        input, textarea {
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        button {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #2980b9;
-        }
-
         footer {
             background-color: var(--primary-color);
             color: var(--white);
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem 0;
         }
 
         .footer-content {
@@ -207,42 +216,177 @@
 
         .social-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             margin-top: 1rem;
         }
 
         .social-link {
             color: var(--white);
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
+            font-size: 1.6rem;
+            transition: color var(--transition-speed) ease;
         }
 
         .social-link:hover {
             color: var(--secondary-color);
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
             .about-content {
                 grid-template-columns: 1fr;
             }
-            
+
             .hero-content h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
+
+            .project-card {
+                padding: 1.2rem;
+            }
+
+            .skills ul,
+            .qualites ul,
+            .langues ul,
+            .interets ul {
+                grid-template-columns: 1fr;
+            }
+        
+
+        .formation-item {
+            background-color: var(--white);
+            border-left: 5px solid var(--secondary-color);
+            padding: 1.2rem 1.8rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: var(--border-radius);
+            transition: transform var(--transition-speed) ease;
         }
+
+        .formation-item:hover {
+            transform: scale(1.02);
+        }
+
+        .formation-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .formation-item p {
+            margin: 0.25rem 0;
+        }
+
+            .skills-table,
+            .qualities-table,
+            .languages-table,
+            .interests-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 1.5rem 0;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+                border-radius: var(--border-radius);
+                overflow: hidden;
+            }
+            
+            .skills-table th,
+            .qualities-table th,
+            .languages-table th,
+            .interests-table th {
+                background-color: var(--primary-color);
+                color: var(--white);
+                text-align: left;
+                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
+                letter-spacing: 0.5px;
+            }
+            
+            .skills-table td,
+            .qualities-table td,
+            .languages-table td,
+            .interests-table td {
+                padding: 0.8rem 1.5rem;
+                border-bottom: 1px solid #eaeaea;
+                background-color: var(--white);
+                transition: all var(--transition-speed) ease;
+            }
+            
+            .skills-table tr:last-child td,
+            .qualities-table tr:last-child td,
+            .languages-table tr:last-child td,
+            .interests-table tr:last-child td {
+                border-bottom: none;
+            }
+            
+            .skills-table tr:hover td,
+            .qualities-table tr:hover td,
+            .languages-table tr:hover td,
+            .interests-table tr:hover td {
+                background-color: rgba(52, 152, 219, 0.05);
+            }
+            
+            .skills-table td i,
+            .qualities-table td i,
+            .languages-table td i,
+            .interests-table td i {
+                margin-right: 0.5rem;
+                color: var(--secondary-color);
+            }
+            
+            .skills-category {
+                background-color: rgba(52, 152, 219, 0.1) !important;
+                font-weight: 600;
+                color: var(--primary-color);
+            }
+
+            @media (max-width: 768px) {
+                .skills-table,
+                .qualities-table,
+                .languages-table,
+                .interests-table {
+                    display: block;
+                    overflow-x: auto;
+                }
+
+                    /* Cache les liens de navigation */
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    /* Affiche le hamburger sur mobile */
+    .hamburger {
+        display: block;
+    }
+
+    /* Affiche les liens lorsque la classe "show" est ajoutée */
+    .nav-links.show {
+        display: flex;
+    }
+
+    /* Ajuste la taille des liens pour mobile */
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links li a {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+            }
     </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">Mon Portfolio</div>
+            <div class="hamburger" id="hamburger">&#9776;</div>
             <ul class="nav-links">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#apropos">À propos</a></li>
+                <li><a href="#formations">Formations</a></li>
                 <li><a href="#projets">Projets</a></li>
             </ul>
         </nav>
@@ -255,34 +399,207 @@
                 <p>Étudiant en deuxième année de BUT Informatique </p>
             </div>
         </section>
+        <section id="formations" class="about">
+            <h2>Formations</h2>
+            <div class="about-content">
+                <div class="formation-item">
+                    <h3><i class="fas fa-graduation-cap"></i> BUT Informatique – IUT Nice Côte d'Azur</h3>
+                    <p><strong>2023 - Maintenant</strong></p>
+                    <p>Parcours : Développement d'applications et de logiciels</p>
+                </div>
+                <div class="formation-item">
+                    <h3><i class="fas fa-graduation-cap"></i> Baccalauréat STMG – Lycée "Collège de France"</h3>
+                    <p><strong>2021 - 2023</strong></p>
+                    <p>Spécialités : Mercatique et Droit/ Economie</p>
+                </div>
+            </div>
+        </section>
 
         <section id="apropos" class="about">
             <h2>À propos de moi</h2>
             <div class="about-content">
-                <div class="about-text">
-                    <p>Je suis un étudiant en deuxième année de BUT Informatique, spécialisé dans le développement d'applications et de logiciels.</p>
-                    <p>Au cours de ma formation et à travers divers projets académiques, j'ai acquis de nombreuses compétences en développement backend et frontend. J'ai également exploré plusieurs autres domaines, tels que le réseau, la cryptographie et les bases de l'intelligence artificielle.</p>
-                </div>
-                <div class="skills">
-                    <h3>Compétences</h3>
-                    <ul>
-                        <li>C</li>
-                        <li>Java</li>
-                        <li>Python</li>
-                        <li>HTML/CSS</li>
-                        <li>JavaScript</li>
-                        <li>PHP</li>
-                        <li>Android Studio</li>
-                        <li>JavaFX</li>
-                        <li>SQL, MySQL</li>
-                        <li>GIT</li>
-                        <li>Virtualisation</li>
-                        <li>Linux</li>
-                        <li>Windows</li>
-                        <li>Spring Boot</li>
-                        <li>Node-Red</li>
-                    </ul>
-                </div>
+                <p>Je suis un étudiant en deuxième année de BUT Informatique, spécialisé dans le développement d'applications et de logiciels.</p>
+                <p>Au cours de ma formation et à travers divers projets académiques, j'ai acquis de nombreuses compétences en développement backend et frontend. J'ai également exploré plusieurs autres domaines, tels que le réseau, la cryptographie et les bases de l'intelligence artificielle.</p>
+            </div>
+        </section>
+        
+        <section id="competences" class="about">
+            <h2>Compétences Techniques</h2>
+            <div class="about-content">
+                <table class="skills-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Compétences</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="skills-category" colspan="2">Langages de programmation</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-code"></i>C</td>
+                            <td><i class="fab fa-java"></i>Java</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><i class="fab fa-python"></i>Python</td>
+                        </tr>
+        
+                        <tr>
+                            <td class="skills-category" colspan="2">Développement Web</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fab fa-html5"></i>HTML/CSS</td>
+                            <td><i class="fab fa-php"></i>PHP</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><i class="fab fa-js"></i>JavaScript</td>
+                        </tr>
+        
+                        <tr>
+                            <td class="skills-category" colspan="2">Développement d'Applications / Logiciels</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fab fa-java"></i>Java (Spring Boot, JavaFX)</td>
+                            <td><i class="fab fa-android"></i>Android Studio</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-project-diagram"></i>Node-Red</td>
+                            <td><i class="fas fa-exchange-alt"></i>API REST</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><i class="fas fa-exchange-alt"></i>API RESTFul</td>
+                        </tr>
+        
+                        <tr>
+                            <td class="skills-category" colspan="2">Base de données</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-database"></i>SQL (MySQL, PhpMyAdmin, Oracle)</td>
+                            <td><i class="fas fa-database"></i>InfluxDB</td>
+                        </tr>
+        
+                        <tr>
+                            <td class="skills-category" colspan="2">Outils de développement</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fab fa-git-alt"></i>Git</td>
+                            <td><i class="fas fa-leaf"></i>Spring Boot</td>
+                        </tr>
+        
+                        <tr>
+                            <td class="skills-category" colspan="2">Outils logiciels</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-home"></i>Home Assistant</td>
+                            <td><i class="fas fa-chart-line"></i>Grafana</td>
+                        </tr>
+        
+                        <tr>
+                            <td class="skills-category" colspan="2">Réseaux</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-network-wired"></i>Cisco Packet Tracer</td>
+                            <td><i class="fas fa-wifi"></i>Wireshark</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><i class="fas fa-layer-group"></i>Modèle OSI</td>
+                        </tr>
+        
+                        <tr>
+                            <td class="skills-category" colspan="2">Sécurité</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-lock"></i>Chiffrement César</td>
+                            <td><i class="fas fa-shield-alt"></i>Hamming</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-lock"></i>Monoalphabétique</td>
+                            <td><i class="fas fa-key"></i>RSA</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><i class="fas fa-fingerprint"></i>SHA256</td>
+                        </tr>
+        
+                        <tr>
+                            <td class="skills-category" colspan="2">Systèmes d'exploitation</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fab fa-linux"></i>Linux</td>
+                            <td><i class="fab fa-windows"></i>Windows</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="qualites" class="about">
+            <h2>Qualités</h2>
+            <div class="about-content">
+                <table class="qualities-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Qualités personnelles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-user-cog"></i>Autonome</td>
+                            <td><i class="fas fa-users"></i>Travail en équipe</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-sync-alt"></i>Adaptabilité</td>
+                            <td><i class="fas fa-comments"></i>Communication</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="langues" class="about">
+            <h2>Langues</h2>
+            <div class="about-content">
+                <table class="languages-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Langues maîtrisées</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-globe-europe"></i>Français</td>
+                            <td><i class="fas fa-globe-europe"></i>Anglais</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-globe-africa"></i>Malgache</td>
+                            <td><i class="fas fa-globe-asia"></i>Chinois (cantonnais)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><i class="fas fa-globe-americas"></i>Espagnol</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="interets" class="about">
+            <h2>Centres d'intérêt</h2>
+            <div class="about-content">
+                <table class="interests-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Centres d'intérêt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-laptop-code"></i>Programmer des petits projets</td>
+                            <td><i class="fas fa-dumbbell"></i>Musculation</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><i class="fas fa-basketball-ball"></i>Basket-Ball</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
@@ -445,6 +762,13 @@
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
+
+        document.getElementById("hamburger").addEventListener("click", function() {
+            const navLinks = document.querySelector(".nav-links");
+            navLinks.classList.toggle("show");
+            });
+
+        
     </script>
 </body>
 </html>
