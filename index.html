@@ -107,8 +107,7 @@
 
         .about {
             background-color: var(--light-bg);
-            padding: 3rem 0;
-            margin-left: 20px;
+            padding: 3rem 2rem;
         }
 
         .about-content {
@@ -230,26 +229,6 @@
             color: var(--secondary-color);
         }
 
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .project-card {
-                padding: 1.2rem;
-            }
-
-            .skills ul,
-            .qualites ul,
-            .langues ul,
-            .interets ul {
-                grid-template-columns: 1fr;
-            }
-        
-
         .formation-item {
             background-color: var(--white);
             border-left: 5px solid var(--secondary-color);
@@ -276,106 +255,205 @@
             margin: 0.25rem 0;
         }
 
+        .skills-table,
+        .qualities-table,
+        .languages-table,
+        .interests-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .skills-table th,
+        .qualities-table th,
+        .languages-table th,
+        .interests-table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: left;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .skills-table td,
+        .qualities-table td,
+        .languages-table td,
+        .interests-table td {
+            padding: 0.8rem 1.5rem;
+            border-bottom: 1px solid #eaeaea;
+            background-color: var(--white);
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .skills-table tr:last-child td,
+        .qualities-table tr:last-child td,
+        .languages-table tr:last-child td,
+        .interests-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .skills-table tr:hover td,
+        .qualities-table tr:hover td,
+        .languages-table tr:hover td,
+        .interests-table tr:hover td {
+            background-color: rgba(52, 152, 219, 0.05);
+        }
+        
+        .skills-table td i,
+        .qualities-table td i,
+        .languages-table td i,
+        .interests-table td i {
+            margin-right: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .skills-category {
+            background-color: rgba(52, 152, 219, 0.1) !important;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Titres de section centrés et avec marges */
+        section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        section h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Media queries pour le responsive design */
+        @media (max-width: 992px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Navigation mobile */
+            nav {
+                flex-wrap: wrap;
+                padding: 0 1rem;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 1rem;
+                padding-bottom: 1rem;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links li a {
+                display: block;
+                padding: 0.8rem;
+                width: 100%;
+            }
+
+            /* Contenu */
+            section {
+                padding: 4rem 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            /* Projets */
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Tables responsives */
             .skills-table,
             .qualities-table,
             .languages-table,
             .interests-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            /* Cartes de projet plus compactes */
+            .project-card {
+                padding: 1rem;
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+
+            .github-link, .demo-link {
                 width: 100%;
-                border-collapse: collapse;
-                margin: 1.5rem 0;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-                border-radius: var(--border-radius);
-                overflow: hidden;
+                justify-content: center;
             }
-            
-            .skills-table th,
-            .qualities-table th,
-            .languages-table th,
-            .interests-table th {
-                background-color: var(--primary-color);
-                color: var(--white);
-                text-align: left;
-                padding: 1rem 1.5rem;
+        }
+
+        @media (max-width: 480px) {
+            /* Ajustements pour les très petits écrans */
+            .hero-content h1 {
+                font-size: 1.7rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .formation-item {
+                padding: 1rem;
+            }
+
+            .formation-item h3 {
                 font-size: 1.1rem;
-                letter-spacing: 0.5px;
             }
-            
+
             .skills-table td,
             .qualities-table td,
             .languages-table td,
             .interests-table td {
-                padding: 0.8rem 1.5rem;
-                border-bottom: 1px solid #eaeaea;
-                background-color: var(--white);
-                transition: all var(--transition-speed) ease;
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
             }
-            
-            .skills-table tr:last-child td,
-            .qualities-table tr:last-child td,
-            .languages-table tr:last-child td,
-            .interests-table tr:last-child td {
-                border-bottom: none;
-            }
-            
-            .skills-table tr:hover td,
-            .qualities-table tr:hover td,
-            .languages-table tr:hover td,
-            .interests-table tr:hover td {
-                background-color: rgba(52, 152, 219, 0.05);
-            }
-            
-            .skills-table td i,
-            .qualities-table td i,
-            .languages-table td i,
-            .interests-table td i {
-                margin-right: 0.5rem;
-                color: var(--secondary-color);
-            }
-            
-            .skills-category {
-                background-color: rgba(52, 152, 219, 0.1) !important;
-                font-weight: 600;
-                color: var(--primary-color);
-            }
-
-            @media (max-width: 768px) {
-                .skills-table,
-                .qualities-table,
-                .languages-table,
-                .interests-table {
-                    display: block;
-                    overflow-x: auto;
-                }
-
-                    /* Cache les liens de navigation */
-    .nav-links {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 10px;
-    }
-
-    /* Affiche le hamburger sur mobile */
-    .hamburger {
-        display: block;
-    }
-
-    /* Affiche les liens lorsque la classe "show" est ajoutée */
-    .nav-links.show {
-        display: flex;
-    }
-
-    /* Ajuste la taille des liens pour mobile */
-    .nav-links li {
-        margin: 10px 0;
-    }
-
-    .nav-links li a {
-        padding: 1rem;
-        font-size: 1.2rem;
-    }
-            }
+        }
     </style>
 </head>
 <body>
@@ -387,6 +465,7 @@
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#apropos">À propos</a></li>
                 <li><a href="#formations">Formations</a></li>
+                <li><a href="#competences">Compétences</a></li>
                 <li><a href="#projets">Projets</a></li>
             </ul>
         </nav>
@@ -399,6 +478,15 @@
                 <p>Étudiant en deuxième année de BUT Informatique </p>
             </div>
         </section>
+        
+        <section id="apropos" class="about">
+            <h2>À propos de moi</h2>
+            <div class="about-content">
+                <p>Je suis un étudiant en deuxième année de BUT Informatique, spécialisé dans le développement d'applications et de logiciels.</p>
+                <p>Au cours de ma formation et à travers divers projets académiques, j'ai acquis de nombreuses compétences en développement backend et frontend. J'ai également exploré plusieurs autres domaines, tels que le réseau, la cryptographie et les bases de l'intelligence artificielle.</p>
+            </div>
+        </section>
+        
         <section id="formations" class="about">
             <h2>Formations</h2>
             <div class="about-content">
@@ -415,14 +503,6 @@
             </div>
         </section>
 
-        <section id="apropos" class="about">
-            <h2>À propos de moi</h2>
-            <div class="about-content">
-                <p>Je suis un étudiant en deuxième année de BUT Informatique, spécialisé dans le développement d'applications et de logiciels.</p>
-                <p>Au cours de ma formation et à travers divers projets académiques, j'ai acquis de nombreuses compétences en développement backend et frontend. J'ai également exploré plusieurs autres domaines, tels que le réseau, la cryptographie et les bases de l'intelligence artificielle.</p>
-            </div>
-        </section>
-        
         <section id="competences" class="about">
             <h2>Compétences Techniques</h2>
             <div class="about-content">
@@ -608,8 +688,7 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <h3>Jeu de paires</h3>
-                    <p>Projet du premier semestre consistant à développer un jeu de paires en langage C, en utilisant la bibliothèque <code>ncurses</code> pour l’interface terminal.</p>
-                    <br>
+                    <p>Projet du premier semestre consistant à développer un jeu de paires en langage C, en utilisant la bibliothèque <code>ncurses</code> pour l'interface terminal.</p>
                     <div class="project-links">
                         <a href="https://github.com/andhy-leong/JeuDePaires" target="_blank" class="github-link">
                             <i class="fab fa-github"></i> Jeu de paires
@@ -619,7 +698,7 @@
 
                 <div class="project-card">
                     <h3>Téléchargement de site web</h3>
-                    <p>développement d'un algorithme en Java permettant de télécharger le contenu complet d’un site web (HTML, CSS, JS) à partir d’une URL, dans le cadre du second semestre</p>
+                    <p>développement d'un algorithme en Java permettant de télécharger le contenu complet d'un site web (HTML, CSS, JS) à partir d'une URL, dans le cadre du second semestre</p>
                     <div class="project-links">
                         <a href="https://github.com/andhy-leong/WebPageSaver" target="_blank" class="github-link">
                             <i class="fab fa-github"></i>WebPageSaver
@@ -629,8 +708,7 @@
 
                 <div class="project-card">
                     <h3>Compression de fichier</h3>
-                    <p>Extension du projet WebPageSaver permettant de compresser automatiquement les fichiers téléchargés afin d’optimiser le stockage.</p>
-                    <br>
+                    <p>Extension du projet WebPageSaver permettant de compresser automatiquement les fichiers téléchargés afin d'optimiser le stockage.</p>
                     <div class="project-links">
                         <a href="https://github.com/andhy-leong/WebCompressLib" target="_blank" class="github-link">
                             <i class="fab fa-github"></i>WebCompressLib
@@ -639,8 +717,7 @@
                 </div>
                 <div class="project-card">
                     <h3>Site de e-commerce</h3>
-                    <p>Conception d’un site e-commerce durant le semestre 3, en adoptant le pattern MVVM pour la structure du projet et la séparation des responsabilités.</p>
-                    <br>
+                    <p>Conception d'un site e-commerce durant le semestre 3, en adoptant le pattern MVVM pour la structure du projet et la séparation des responsabilités.</p>
                     <div class="project-links">
                         <a href="https://github.com/andhy-leong/e-commerce" target="_blank" class="github-link">
                             <i class="fab fa-github"></i>Site de e-commerce
@@ -649,8 +726,7 @@
                 </div>
                 <div class="project-card">
                     <h3>ERP</h3>
-                    <p>Création d’un ERP pour la gestion d’une station-service en utilisant Vue.js pour le front-end et accompagné du PHP pour le back-end, réalisé au cours du semestre 4.</p>
-                    <br>
+                    <p>Création d'un ERP pour la gestion d'une station-service en utilisant Vue.js pour le front-end et accompagné du PHP pour le back-end, réalisé au cours du semestre 4.</p>
                     <div class="project-links">
                         <a href="https://github.com/andhy-leong/ERP" target="_blank" class="github-link">
                             <i class="fab fa-github"></i>ERP station service
@@ -659,8 +735,7 @@
                 </div>
                 <div class="project-card">
                     <h3>Blind Test</h3>
-                    <p>Développement d’une application de blind test utilisant l’API Deezer pour récupérer les extraits musicaux. Intégration des appels API REST et gestion des réponses en temps réel.</p>
-                    <br>
+                    <p>Développement d'une application de blind test utilisant l'API Deezer pour récupérer les extraits musicaux. Intégration des appels API REST et gestion des réponses en temps réel.</p>
                     <div class="project-links">
                         <a href="https://github.com/andhy-leong/blindTest" target="_blank" class="github-link">
                             <i class="fab fa-github"></i>Blind Test Application
@@ -669,14 +744,22 @@
                 </div>
                 <div class="project-card">
                     <h3>Quiz</h3>
-                    <p>Développement d’un quiz interactif en React pour le front-end et Java (Spring Boot) pour le back-end. Le projet met en œuvre une architecture full-stack avec communication via API REST.</p>
-                    <br>
+                    <p>Développement d'un quiz interactif en React pour le front-end et Java (Spring Boot) pour le back-end. Le projet met en œuvre une architecture full-stack avec communication via API REST.</p>
                     <div class="project-links">
                         <a href="https://github.com/andhy-leong/Quiz" target="_blank" class="github-link">
                             <i class="fab fa-github"></i>Quiz
                         </a>
                     </div>
                 </div>
+                <div class="project-card">
+                    <h3>Initiation Multimédia</h3>
+                    <p>Tous mes projets fait en initiation multimédia.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/andhy-leong/Initiation-Multimedia" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>Initiation Multimedia
+                        </a>
+                    </div>
+                </div>                
             </div>
         </section>
     </main>
@@ -733,42 +816,17 @@
             lastScroll = currentScroll;
         });
 
-        const contactForm = document.getElementById('contact-form');
-
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-
-            console.log('Données du formulaire:', data);
-
-            this.reset();
-            alert('Message envoyé avec succès!');
-        });
-
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-
+        // Gestion du menu hamburger
         document.getElementById("hamburger").addEventListener("click", function() {
             const navLinks = document.querySelector(".nav-links");
             navLinks.classList.toggle("show");
-            });
+        });
 
+        // Fermer le menu après avoir cliqué sur un lien (pour mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('show');
+            });
+        });
         
-    </script>
-</body>
-</html>
+        
