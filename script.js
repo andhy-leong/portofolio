@@ -272,3 +272,37 @@ document.getElementById("lang-select").addEventListener("change", e => {
     cvBtnHeader.setAttribute("download", "CV_Andhy_RAHARISON.pdf");
   }
 });
+
+// --- GESTION DES BOUTONS DE SCROLL ---
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollTopBtn = document.getElementById('scroll-to-top-btn');
+  const scrollBottomBtn = document.getElementById('scroll-to-bottom-btn');
+
+  // Au chargement, on affiche le bouton pour descendre
+  if (scrollBottomBtn) {
+    scrollBottomBtn.classList.add('show');
+  }
+
+  window.addEventListener('scroll', () => {
+    // Hauteur totale de la page
+    const documentHeight = document.body.scrollHeight;
+    // Position actuelle du bas de la fenêtre
+    const scrollPosition = window.scrollY + window.innerHeight;
+
+    // AFFICHER LE BOUTON "MONTER"
+    // S'affiche si on a scrollé de plus de 300px
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add('show');
+    } else {
+      scrollTopBtn.classList.remove('show');
+    }
+
+    // CACHER LE BOUTON "DESCENDRE"
+    // Se cache si on est à moins de 100px de la fin
+    if (scrollPosition >= documentHeight - 100) {
+      scrollBottomBtn.classList.remove('show');
+    } else {
+      scrollBottomBtn.classList.add('show');
+    }
+  });
+});

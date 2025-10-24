@@ -606,3 +606,50 @@ body.light .progress-bar {
 #footer-3d-container:active {
   cursor: grabbing;
 }
+
+/* --- BOUTONS DE SCROLL HAUT/BAS --- */
+
+.scroll-btn {
+  position: fixed;
+  right: 20px;
+  /* Taille réduite */
+  width: 40px;
+  height: 40px;
+  background-color: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  /* Taille de l'icône réduite */
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 999;
+  
+  opacity: 0;
+  transform: scale(0);
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+/* Positionnement vertical de chaque bouton */
+#scroll-to-top-btn {
+  bottom: 20px;
+}
+#scroll-to-bottom-btn {
+  /* Position ajustée pour la nouvelle taille */
+  bottom: 70px;
+}
+
+/* Classe pour rendre les boutons visibles */
+.scroll-btn.show {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+
+.scroll-btn:hover {
+  background-color: #e65c00;
+  transform: scale(1.1);
+}
