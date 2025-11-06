@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAHARISON Leong</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-right">
+        <select id="lang-select">
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+          <option value="mg">MG</option>
+        </select>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#accueil" data-text="nav-accueil">Accueil</a></li>
+        <li><a href="#apropos" data-text="nav-apropos">À propos</a></li>
+        <li><a href="#formations" data-text="nav-formations">Formations</a></li>
+        <li><a href="#experiences" data-text="nav-experiences">Expériences</a></li>
+        <li><a href="#competences" data-text="nav-competences">Compétences</a></li>
+        <li><a href="#projets" data-text="nav-projets">Projets</a></li>
+        <li><a href="ressources/CV_RAHARISON_LEONG_FR.pdf" download="CV_Andhy_RAHARISON.pdf" id="cv-header-btn" class="cv-button-header"><i class="fas fa-download"></i> <span data-text="cv-download-header">Mon CV</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="accueil" class="hero">
+      <div class="hero-content">
+        <h1 data-text="titre">RAHARISON Leong Foc Sing Andhy</h1>
+        <p data-text="sous-titre">Étudiant en troisième année de BUT Informatique</p>
+      </div>
+    </section>
+
+    <section id="apropos" class="about">
+      <h2 data-text="apropos-titre">À propos de moi</h2>
+      <div class="about-content">
+        <p data-text="apropos-texte1">Je suis un étudiant en troisième année de BUT Informatique, spécialisé dans le développement d'applications et de logiciels.</p>
+        <p data-text="apropos-texte2">Au cours de ma formation et à travers divers projets académiques, j'ai acquis de nombreuses compétences en développement backend et frontend. J'ai également exploré plusieurs autres domaines, tels que le réseau, la cryptographie et les bases de l'intelligence artificielle.</p>
+      </div>
+    </section>
+
+    <section id="formations" class="formations">
+      <h2 data-text="formations-titre">Formations</h2>
+      <div class="timeline">
+        <div class="formation-item">
+            <h3><i class="fas fa-graduation-cap"></i> <span data-text="but">BUT Informatique – IUT Nice Côte d'Azur</span></h3>
+            <span>2023 - Présent</span>
+            <p data-text="but-parcours">Parcours : Développement d'applications et de logiciels</p>
+        </div>
+        <div class="formation-item">
+            <h3><i class="fas fa-school"></i> <span data-text="bac">Baccalauréat STMG – Lycée “Collège de France”</span></h3>
+            <span>2021 - 2023</span>
+            <p data-text="bac-specialites">Spécialités : Mercatique et Droit/ Economie</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiences">
+      <h2 data-text="experiences-titre">Expériences Professionnelles</h2>
+      <div class="timeline">
+        
+        <div class="formation-item">
+          <h3><i class="fas fa-briefcase"></i> <span data-text="exp1-titre">Stagiaire - IMREDD (Institut Méditerranéen du Risque de l’Environnement et du Développement Durable)</span></h3>
+          <span data-text="exp1-dates">Avril 2025 - Juin 2025</span>
+            
+          <ul class="experience-list">
+            <li data-text="exp1-desc">Conception d’une architecture de récupération et de formatage de données</li>
+            <li data-text="exp2-desc">Utilisation de Grafana pour la visualisation des données collectées</li>
+          </ul>
+            
+        </div>
+      </div>
+    </section>
+    <section id="competences" class="skills">
+
+   <section id="competences" class="skills">
+    <h2 data-text="competences-titre">Compétences</h2>
+
+    <div class="skills-grid">
+    <!-- Ligne 1 -->
+    <div class="skill-card">
+      <i class="fas fa-code"></i>
+      <h3 data-text="h3-langages">Langages</h3>
+      <ul>
+        <li><i class="fas fa-terminal"></i> C</li>
+        <li><i class="fab fa-java"></i> Java (Spring Boot, JavaFX)</li>
+        <li><i class="fab fa-python"></i> Python</li>
+      </ul>
+    </div>
+
+    <div class="skill-card">
+      <i class="fas fa-mobile-alt"></i>
+      <h3 data-text="h3-web">Web & Mobile</h3>
+      <ul>
+        <li><i class="fab fa-html5"></i> HTML</li>
+        <li><i class="fab fa-css3-alt"></i> CSS</li>
+        <li><i class="fab fa-android"></i> Android Studio</li>
+        <li><i class="fab fa-js"></i> JavaScript</li>
+        <li><i class="fab fa-php"></i> PHP</li>
+        <li><i class="fas fa-cube"></i> Three.js</li>
+        <li><i class="fas fa-cube"></i> Babylone.js</li>
+        <li><i class="fas fa-exchange-alt"></i> API REST</li>
+      </ul>
+    </div>
+
+    <div class="skill-card">
+      <i class="fas fa-database"></i>
+      <h3 data-text="h3-db">Base de données</h3>
+      <ul>
+        <li><i class="fas fa-database"></i> MySQL</li>
+        <li><i class="fas fa-database"></i> PhpMyAdmin</li>
+        <li><i class="fas fa-database"></i> Oracle</li>
+        <li><i class="fas fa-database"></i> InfluxDB</li>
+        <li><i class="fas fa-database"></i> MongoDB</li>
+        <li><i class="fas fa-database"></i> SQL</li>
+        <li><i class="fas fa-database"></i> Cassandra</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="skills-grid">
+    <!-- Ligne 2 -->
+    <div class="skill-card">
+      <i class="fas fa-tools"></i>
+      <h3 data-text="h3-outils">Outils & Environnement</h3>
+      <ul>
+        <li><i class="fab fa-git-alt"></i> Git</li>
+        <li><i class="fas fa-chart-line"></i> Grafana</li>
+        <li><i class="fas fa-home"></i> Home Assistant</li>
+        <li><i class="fas fa-project-diagram"></i> Node-Red</li>
+        <li><i class="fab fa-docker"></i> Docker</li>
+        <li><i class="fas fa-microchip"></i> Arduino</li>
+        <li><i class="fas fa-cloud"></i> Microsoft Azure</li>
+      </ul>
+    </div>
+
+    <div class="skill-card">
+      <i class="fas fa-network-wired"></i>
+      <h3 data-text="h3-reseaux">Réseaux & Sécurité</h3>
+      <ul>
+        <li><i class="fas fa-network-wired"></i> Cisco Packet Tracer</li>
+        <li><i class="fas fa-wifi"></i> Wireshark</li>
+        <li><i class="fas fa-fingerprint"></i> SHA256</li>
+        <li><i class="fas fa-key"></i>RSA</li>
+      </ul>
+    </div>
+
+    <div class="skill-card">
+      <i class="fas fa-desktop"></i>
+      <h3 data-text="h3-os">Systèmes d’exploitation</h3>
+      <ul>
+        <li><i class="fab fa-linux"></i> Linux (Debian, Kali)</li>
+        <li><i class="fab fa-windows"></i> Windows</li>
+      </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="projets" class="projects">
+    <h2 data-text="projets-titre">Mes Projets</h2>
+    <div class="projects-grid">
+        
+        <div class="project-card">
+        <h3>Jeu de paires</h3>
+        <p data-text="paires-desc">Développement d'un jeu de paires en langage C, en utilisant la bibliothèque <code>ncurses</code> pour l'interface terminal.</p>
+        <a href="https://github.com/andhy-leong/JeuDePaires" target="_blank" class="github-link">
+            <i class="fab fa-github"></i> Jeu de paires
+        </a>
+        </div>
+
+        <div class="project-card">
+        <h3>Téléchargement de site web</h3>
+        <p data-text="websaver-desc">Réalisation d'un outil en Java pour télécharger l'intégralité d'un site web (fichiers HTML, CSS et JS) à partir de son URL.</p>
+        <a href="https://github.com/andhy-leong/WebPageSaver" target="_blank" class="github-link">
+            <i class="fab fa-github"></i> WebPageSaver
+        </a>
+        </div>
+
+        <div class="project-card">
+        <h3>Compression de fichier</h3>
+        <p data-text="webcompress-desc">Extension du projet WebPageSaver permettant de compresser les fichiers téléchargés afin d'optimiser le stockage.</p>
+        <a href="https://github.com/andhy-leong/WebCompressLib" target="_blank" class="github-link">
+            <i class="fab fa-github"></i> WebCompressLib
+        </a>
+        </div>
+
+        <div class="project-card">
+        <h3>Site de e-commerce</h3>
+        <p data-text="ecommerce-desc">Conception d'une plateforme e-commerce structurée autour du pattern d'architecture MVC pour garantir une séparation claire des responsabilités.</p>
+        <a href="https://github.com/andhy-leong/e-commerce" target="_blank" class="github-link">
+            <i class="fab fa-github"></i> Site de e-commerce
+        </a>
+        </div>
+
+        <div class="project-card">
+        <h3>ERP</h3>
+        <p data-text="erp-desc">Création d'un ERP pour la gestion d'une station-service, avec un front-end réactif en Vue.js et un back-end en PHP.</p>
+        <a href="https://github.com/andhy-leong/ERP" target="_blank" class="github-link">
+            <i class="fab fa-github"></i> ERP station service
+        </a>
+        </div>
+
+        <div class="project-card">
+        <h3>Blind Test</h3>
+        <p data-text="blindtest-desc">Réalisation d'une application de blind test interactive qui interroge l'API de Deezer pour les extraits musicaux et gère les réponses en temps réel via des appels REST.</p>
+        <a href="https://github.com/andhy-leong/blindTest" target="_blank" class="github-link">
+            <i class="fab fa-github"></i> Blind Test Application
+        </a>
+        </div>
+
+        <div class="project-card">
+        <h3>Quiz</h3>
+        <p data-text="quiz-desc">Architecture d'une application de quiz full-stack, combinant un front-end en React et un back-end robuste en Java (Spring Boot) qui communiquent via une API REST.</p>
+        <a href="https://github.com/andhy-leong/Quiz" target="_blank" class="github-link">
+            <i class="fab fa-github"></i> Quiz
+        </a>
+        </div>
+
+        <div class="project-card">
+        <h3>Un mouton à la mer</h3>
+        <p data-text="mouton-desc">Conception d'un jeu de cartes multijoueur, incluant une gestion réseau complexe pour synchroniser un plateau central, des écrans de joueurs, un mode espion et des bots à difficulté variable.</p>
+        <a href="https://github.com/andhy-leong/UnMoutonALaMer" target="_blank" class="github-link">
+            <i class="fab fa-github"></i> Un mouton à la mer
+        </a>
+        </div>
+
+        <div class="project-card">
+            <h3>Initiation Multimédia</h3>
+            <p data-text="multimedia-desc">Tous mes projets réalisés en initiation multimédia.</p>
+            <div class="project-links">
+              <a href="https://andhy-leong.github.io/Initiation-Multimedia/" target="_blank" class="github-link site-link">
+                  <i class="fas fa-globe"></i> Page web
+              </a>  
+              <a href="https://github.com/andhy-leong/Initiation-Multimedia" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> I.M Github
+                </a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Apprendre le malgache</h3>
+            <p data-text="learnmalagasy-desc">Conception d'une application web d'apprentissage du malgache, développée entièrement en HTML, CSS et JavaScript pur. Toute la logique de progression par niveaux, les leçons interactives et les quiz sont gérés côté client, avec une sauvegarde de l'avancement de l'utilisateur dans le localStorage du navigateur.</p>
+            <div class="project-links">
+              <a href="https://andhy-leong.github.io/LearnMalagasy/" target="_blank" class="github-link site-link">
+                  <i class="fas fa-globe"></i> Page web
+              </a>  
+              <a href="https://github.com/andhy-leong/LearnMalagasy" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> Apprendre MG
+                </a>
+            </div>
+        </div>
+
+    </div>
+    </section>
+      
+    <section id="langues" class="about">
+    <h2 data-text="langues-titre">Langues</h2>
+    <div class="languages-grid">
+        
+        <div class="language-card">
+        <div class="lang-header">
+            <i class="fas fa-globe-europe"></i>
+            <span data-text="lang-fr">Français</span>
+        </div>
+        <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+        <span class="level" data-text="niveau-fr">Langue maternelle</span>
+        </div>
+
+        <div class="language-card">
+        <div class="lang-header">
+            <i class="fas fa-globe-africa"></i>
+            <span data-text="lang-mg">Malgache</span>
+        </div>
+        <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+        <span class="level" data-text="niveau-mg">Langue maternelle</span>
+        </div>
+
+        <div class="language-card">
+        <div class="lang-header">
+            <i class="fas fa-globe-europe"></i>
+            <span data-text="lang-en">Anglais</span>
+        </div>
+        <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+        <span class="level" data-text="niveau-en">Courant (B2)</span>
+        </div>
+
+        <div class="language-card">
+        <div class="lang-header">
+            <i class="fas fa-globe-asia"></i>
+            <span data-text="lang-zh">Chinois (cantonnais)</span>
+        </div>
+        <div class="progress-bar"><div class="progress" style="width: 40%;"></div></div>
+        <span class="level" data-text="niveau-zh">Intermédiaire (B1)</span>
+        </div>
+
+        <div class="language-card">
+        <div class="lang-header">
+            <i class="fas fa-globe-europe"></i>
+            <span data-text="lang-es">Espagnol</span>
+        </div>
+        <div class="progress-bar"><div class="progress" style="width: 25%;"></div></div>
+        <span class="level" data-text="niveau-es">Débutant (A2)</span>
+        </div>
+
+    </div>
+    </section>
+
+  </main>
+
+<footer id="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="carousel-container">
+          <div class="carousel-slide">
+            <img src="ressources/footer1.jpg" alt="Photo de Leong 1" class="footer-photo">
+            <img src="ressources/footer2.JPG" alt="Photo de Leong 2" class="footer-photo">
+            <img src="ressources/footer3.jpg" alt="Photo de Leong 3" class="footer-photo">
+          </div>
+          <button id="prevBtn" class="carousel-btn prev">&#10094;</button>
+          <button id="nextBtn" class="carousel-btn next">&#10095;</button>
+        </div>
+      </div>
+      <div class="footer-center">
+        <h3 data-text="footer-contact">Contact</h3>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:andhyleong29@gmail.com">andhyleong29@gmail.com</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps?q=Nice,France" target="_blank" rel="noopener noreferrer"><span data-text="footer-location">Nice, France</span></a></p>
+        <a href="ressources/CV_RAHARISON_LEONG_FR.pdf" download="CV_Andhy_RAHARISON.pdf" id="cv-download-btn" class="cv-button">
+          <i class="fas fa-download"></i> <span data-text="cv-download">Télécharger mon CV</span>
+        </a>
+      </div>
+      <div class="footer-right">
+        <h3 data-text="footer-suivez">Suivez-moi</h3>
+        <div class="social-links">
+          <a href="https://github.com/andhy-leong" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/leong-foc-sing-andhy-raharison-2404322b7/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/andhy_leong/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@andhy_leong" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div id="footer-3d-container"></div>
+    <div class="footer-bottom">
+      <p data-text="footer-copyright">&copy; 2025 Raharison Leong Foc Sing Andhy</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <script src="3d-object.js"></script>
+
+  <a href="#accueil" id="scroll-to-top-btn" class="scroll-btn"><i class="fas fa-arrow-up"></i></a>
+  <a href="#footer" id="scroll-to-bottom-btn" class="scroll-btn"><i class="fas fa-arrow-down"></i></a>
+</body>
+</html>
